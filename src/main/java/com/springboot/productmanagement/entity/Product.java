@@ -1,10 +1,21 @@
-package com.springboot.productmanagement.model;
+package com.springboot.productmanagement.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(nullable = false)
+    private Integer id;
     private String name;
     private int quantity;
     private double price;
+
+    public Product(){
+        
+    }
 
     public Product(int id, String name, int quantity, double price) {
         this.id = id;
@@ -13,7 +24,7 @@ public class Product {
         this.price = price;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
