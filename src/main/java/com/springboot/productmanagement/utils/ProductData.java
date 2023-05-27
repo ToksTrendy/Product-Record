@@ -1,6 +1,6 @@
 package com.springboot.productmanagement.utils;
 
-import com.springboot.productmanagement.model.Product;
+import com.springboot.productmanagement.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;
