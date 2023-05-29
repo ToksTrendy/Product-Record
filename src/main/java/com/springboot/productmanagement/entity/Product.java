@@ -8,7 +8,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false)
-    private Integer id;
+    private  Integer id;
     private String name;
     private int quantity;
     private double price;
@@ -24,37 +24,42 @@ public class Product {
         this.price = price;
     }
 
-    public static int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public Product setId(int id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Product setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public Product setQuantity(int quantity) {
         this.quantity = quantity;
+        return this;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public Product setPrice(double price) {
         this.price = price;
+        return this;
     }
+
 
     @Override
     public String toString() {

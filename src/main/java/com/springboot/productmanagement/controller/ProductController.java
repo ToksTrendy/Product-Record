@@ -82,7 +82,7 @@ public ResponseEntity<?> createProduct(@RequestBody Product product) throws URIS
         return ResponseEntity.ok(updatedProduct);
     } else {
         return ResponseEntity.badRequest().body(
-                buildErrorResponse("Product with Id " + Product.getId() + " does not exist", BAD_REQUEST)
+                buildErrorResponse("Product with Id " + product.getId() + " does not exist", BAD_REQUEST)
         );
     }
 }
