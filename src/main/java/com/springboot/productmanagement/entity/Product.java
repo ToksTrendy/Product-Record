@@ -1,10 +1,21 @@
-package com.springboot.productmanagement.model;
+package com.springboot.productmanagement.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(nullable = false)
+    private  Integer id;
     private String name;
     private int quantity;
     private double price;
+
+    public Product(){
+        
+    }
 
     public Product(int id, String name, int quantity, double price) {
         this.id = id;
@@ -13,37 +24,42 @@ public class Product {
         this.price = price;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public Product setId(int id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Product setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public Product setQuantity(int quantity) {
         this.quantity = quantity;
+        return this;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public Product setPrice(double price) {
         this.price = price;
+        return this;
     }
+
 
     @Override
     public String toString() {
